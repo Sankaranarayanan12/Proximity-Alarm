@@ -35,6 +35,6 @@ So essentially distance in (inches)= [(765 * 5280 * 12)/(3600 * 10^6)] * (time i
 
 So now using the above relation we get our distance in inches from our time input in microseconds.
 
-After this depending on the distance range in my case if it is between 30 inches and 10 inches the LED and buzzer will switch on wait for 5 seconds and switch off and wait for 5 seconds, or if it is between 10 inches and 5 inches the LED and buzzer will switch on wait for 3 seconds and switch off and wait for 3 seconds, or if it is less than 5 inches they switch on wait for 1 second and switch off wait for 1 second and it keeps looping on.
+After this depending on the distance range in my case if the distance is between 10 and 30 inches, they blink slowly toggling every 5 seconds. Between 5 and 10 inches, the blink rate increases, toggling every 3 seconds. Under 5 inches, they toggle every second, signaling that the object is very close. Beyond 30 inches, both are off. The blinking is implemented using millis() so the sensor reads distance continuously without freezing.
 
 
